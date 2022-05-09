@@ -1,0 +1,22 @@
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': [],
+    'F': []
+}
+
+visited = []
+
+
+def dfs(visited, input_graph, input_vector):
+    if input_vector not in visited:
+        print(input_vector)
+        visited.append(input_vector)
+        for neighbour in input_graph[input_vector]:
+            dfs(visited, input_graph, neighbour)
+
+
+dfs(visited, graph, "A")

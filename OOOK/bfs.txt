@@ -1,0 +1,38 @@
+
+
+
+New
+Folders and views
+My Drive
+Computers
+Shared with me
+Recent
+Starred
+Trash
+
+graph = {
+    'A': ['B'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['C', 'F'],
+    'F': []
+}
+
+
+def bfs(input_graph, node):
+    visited = [node]
+    queue = [node]
+
+    while queue:
+        s = queue.pop(0)
+        print(s, end=" ")
+
+        for neighbour in input_graph[s]:
+            if neighbour not in visited:
+                visited.append(neighbour)
+                queue.append(neighbour)
+
+
+# Driver Code
+bfs(graph, "A")
